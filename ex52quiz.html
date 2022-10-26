@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>적정 체중을 구하는 프로그램</h1>
+    <div>
+        [실습] 이름, 키, 몸무게를 prompt로 입력받아서 적정체중을 구한 뒤 <br>
+        테이블 형태, 또는 나열 출력하세요.<br>
+        이름 홍길동<br>
+        키:  188cm<br>
+        몸무게: 65kg<br>
+        적정체중: ??kg<br>
+        (적정체중 = 키 -100 값의 90%정도를 적정체중으로 합니다.)<br>
+        10%초과 과체중<br>
+        10%미만 미달<br>
+        그외 적정<br>
+    </div>
+    <hr color="brown">
+    <script>
+        let name=window.prompt("이름을 입력하세요", "홍길동");
+        let height=window.prompt("키를 입력하세요", 180);
+        let weight=window.prompt("몸무게를 입력하세요", 70);
+        let bmi=(height-100)*0.9 // 연산순서 고려(괄호),
+        let result="";
+            cr='black'
+
+        if(weight>bmi*1.1){
+            result="과체중입니다."; //red
+            cr='red'
+        }
+        else if(bmi*0.9<=weight && weight<=bmi*1.1){
+            result="적정체중입니다."; //green
+            cr='green'
+        }
+        else{result="체중미달입니다."; //blue
+            cr='blue'
+        }
+
+        // += : 누적
+        let str="<table border='1'>";
+            str+="<tr><th>이름</th><td>"+name+"</td></tr>";
+            str+="<tr><th>키</th><td>"+height+" cm</td></tr>";
+            str+="<tr><th>몸무게</th><td>"+weight+" kg</td></tr>";
+            str+="<tr><th>적정체중</th><td>"+bmi+" kg</td></tr>";
+            str+="<tr><th>결과</th><td style='color:"+cr+"'>"+result+"</td></tr>";
+            str+="</table>";
+            // alert(str);
+        document.write(str);
+
+            // 직접 나열했던방식.. 모두 쭉 이어써도 될듯 +와 ""만 잘구분해서
+        // document.write("이름 : "+name+"<br>");
+        // document.write("키 : "+height+"cm"+"<br>");
+        // document.write("몸무게 : "+weight+"kg"+"<br>");
+        // document.write("적정체중 : "+result+"kg"+"<br>");
+        
+    </script>
+
+</body>
+</html>

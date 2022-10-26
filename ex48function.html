@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex48function</title>
+</head>
+<body>
+    <h1>함수</h1>
+    <script>
+        /*함수를 구성하는 방법
+            [1] old 방식
+
+            function 함수명([매개변수,...]){
+                함수 내용 구성
+            }
+            hoisting(끌어올림)이 지원된다.
+            호출이 먼저오고 함수가 나중에 선언되도 작동됨.
+
+
+            [2] literal방식은 다음과 같음
+
+            var 변수명=function([매개변수,...]){
+
+            }
+        */
+
+        //old
+        plus("hois", "ting"); //hoisting 되는지 확인. 아래 plus 선언문을 끌어와서 자동으로 찾아냄
+        // minus("hois", "ting"); //hoisting 되는지 확인 [X] 선언을 못찾음 literal은 hoisting 안됨.
+
+        function plus(a, b){
+            document.write("<h2>"+a+"+"+b+"="+(a+b)+"</h2>");
+        }
+
+        //new
+        var minus= function(x, y){
+            document.write("<h2>"+x+"-"+y+"="+(x-y)+"</h2>");
+        }
+
+
+        plus(1, 3); //함수호출
+        plus(1.13, 4.55)
+        minus(20, 7);
+        minus(2.13, 3.22)
+
+    </script>
+</body>
+</html>

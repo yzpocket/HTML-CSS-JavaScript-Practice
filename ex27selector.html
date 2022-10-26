@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모든 input을 선택해서 padding 5px margin 5px */
+        input{padding: 5px; margin: 5px;}
+        /* input element 중 text인 element만 선택해서 색 */
+        input[type=text]{color:blue;}
+        /* input element 중 password element를 선택해서 색 */
+        input[type=password]{background-color: aqua;}
+
+        /* 선택자 :focus 선택자에 포커스가 왔을때 */
+        /* text인 element에 포커스가 오면 글자색 red로 password=>green */
+        input[type=text]:focus{color: red;}
+        input[type=password]:focus{color: green; border: thick dashed violet;}
+
+        /* input element중에 disabled 된 element를 찾아서 그 옆의(span으로 감싸야함) 문자열 글자색을 변경해 보세요 */
+        input:disabled+span{color: blueviolet;}
+        
+        /* input element 중에 활성화enabled element를 찾아서 색변경 */
+        input:enabled+span{color: aquamarine;}
+
+        /* ////   /* input element 중 체크가 되면 그 옆의 span element의 글자색을 orange로 주세요*/
+        input:checked+span{color: orange;}
+        
+        </style>
+</head>
+<body>
+    <h1>가상클래스 선택자</h1>
+    <input type="text"  value="포커스가 오면 red로"><br>
+    <input type="password"  value="포커스가 오면 green으로"><br>
+    <hr>
+    <!-- label로 감싸면 라디오버튼말고도 텍스트를 눌러도 라디오버튼이 함께 선택됨= 사용자가 편함 -->
+    <label for="gender1"><input type="radio" value="Male" name="gender" id="gender1">Male</label>
+    <label for="gender2"><input type="radio" value="female" name="gender" id="gender2">Female</label>
+    <hr>
+    <label for="ck1"><input type="checkbox"    id="ck1"    value="bicycle">I have a bicycle</label>
+    <label for="ck2"><input type="checkbox"    id="ck2"    value="car"><span>I have a car</span></label>
+    <label for="ck3"><input type="checkbox"    id="ck3"    value="motorcycle"disabled> <span>I have a motorcycle</span></label>
+</body>
+</html>

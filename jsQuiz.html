@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrant Quiz</title>
+    <style type="text/css">
+        #wrap{
+            width: 60%;
+            height: 750px;
+            margin: auto;
+            border : 5px solid gray;
+            padding: 20px;
+        }
+        #wrap div{
+            margin: auto;
+        }
+        img{
+            width: 60%;
+            margin: auto;
+            margin-left: 20%;
+            border : 1px solid lightslategray;
+        }
+        #btn1{
+            width: 150px;
+            height: 50px;
+        }
+        #btnBox{
+            width: 150px;
+            margin: auto;
+        }
+        #imgBox{
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2 style="text-align: center;">#조건문 기본 예제#</h1>
+        <div id="imgBox">
+            <img src="../images/QuizImg.png" alt="퀴즈이미지">
+        </div>
+        <div>
+            <br><br>
+            <p>
+                Q1. 주어진 점이 어느 사분면에 속하는지 알아내는 문제 사분면은 아래 그림처럼 1부터 4까지 번호를 갖는다.<br>
+                "Quadrant n"은 "제n사분면"이라는 뜻이다.    예를 들어, 좌표가 (12, 5)인 점 A는 x좌표와 y좌표가 모두 양수이므로 <br>
+                 제1사분면에 속한다.점 B는 x좌표가 음수이고 y좌표가 양수이므로 제2사분면에 속한다.점의 좌표를 입력받아 <br> 그 점이 어느 사분면에 속하는지 알아내는 프로그램을 작성하시오
+            </p>
+            <p style="color : red">
+                *조건1. 좌표값은 0이 될수없다(빈칸 x) <br>
+                *조건2. 좌표값은 1000보다는 같거나 작고 -1000보다는 같거나 커야합니다
+            </p>
+        </div>  
+        <div id="btnBox">
+            <button id="btn1" onclick="onPrompt()">좌표값 입력</button>
+        </div>
+    </div>
+    <!-- 스크립트 시작 -->
+    <script>
+        var onPrompt = function(){                  //#btn1 버튼 클릭시 실행되는 함수
+            var xValue = prompt("x값을 입력하세요");
+            var yValue = prompt("y값을 입력하세요");
+
+            parseInt(xValue);                       //String -> number 형변환
+            parseInt(yValue);
+
+            //주어진 좌표값 조건을 체크합니다(유효성체크)
+            if((xValue == 0 || xValue > 1000 || xValue < -1000 || xValue == null) 
+            || (yValue == 0 || yValue > 1000 || yValue < -1000 || yValue == null)) {
+            //if(xValue > 1000){
+                alert("잘못된 값입니다! 조건을 확인해주세요");
+                return //나중가서 배웁니다 여기선 실행중인 함수를 종료시키는 역할입니다
+            }
+
+            console.log(xValue , yValue);           //콘솔창에 값을 찍는 함수입니다
+
+            if(xValue > 0){                         //x가 양수일때
+                if(yValue > 0){                     //x가 양수이고 y가 양수일때
+                    alert("제1 사분면 입니다");
+                }else alert("제4 사분면 입니다");     //x가 양수이고 y가 음수일때
+            }else{                                  //x가 음수일때
+                if(yValue > 0){                     //x가 음수이고 y가 양수일때
+                    alert("제2 사분면 입니다")
+                }else{                              //x가 음수이고 y가 음수일때
+                    alert("제3 사분면 입니다");
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

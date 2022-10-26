@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22selector</title>
+    <style>
+        /* 1. tag 선택자 */
+        div{color:darkgreen;font-family: 'Courier New', Courier, monospace;font=size:1.2em; font-weight:900;}
+        /* 2. class 선택자 */
+        .c1{color:aqua;padding:1em;margin:.8em;background-color: bisque;}
+        .c2{border: 3px solid blue;}
+        /* 3. id 선택자 */
+        #dv1, #p1{border: 5px dashed red;}
+        #dv2{background-color: darkcyan;}
+
+        /* id > class > (계층) > tag 순서로 우선순위가 높다 */
+        /* 동일한 우선순위인 경우에 나중에 기술한 것이 적용 될 수 있다. */
+    </style>
+</head>
+<body>
+    <!-- id(identity) : 한 페이지 내에서 고유한 unique한 값을 가져야 한다
+        class : 한 페이지 내에서 동일한 이름의 클래스가 여러 개 나와도 된다
+     -->
+        
+    <h1>ID선택자, class선택자, tag선택자</h1>
+    <div id="dv1">div#div1</div>
+    <div class="c1">div.c1</div>
+    <p id="p1">p#p1</p>
+    <p class="c1">p.c1</p>
+    <div id="dv2" class="c2 c1">div#div2 + .c2</div>
+
+</body>
+</html>
+
+<!-- ex22selector -->

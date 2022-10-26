@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex46var</title>
+</head>
+<body>
+    <h1>JavaScript Data types</h1>
+    <h2>기본타입 : number, string, boolean, underfined</h2>
+    <h2>참조형 : object, function</h2>
+    <script>
+        var a; // 변수 선언(var, let(최근엔 이것도사용), const(상수에 사용하기도함))
+        a=10; //number type이 됨
+        var b="Hello"; //string type이 됨
+        document.write("a=", a, "<br>");
+        document.write("a의 자료형: ", typeof a,"<br>");
+        document.write("b=", b, "<br>");
+        document.write("b의 자료형: ", typeof b,"<br>");
+        a='Hi';
+        document.write("a=", a, "<br>");
+        document.write("a의 자료형: ", typeof a,"<br>");
+        
+        let intNum=100;//정수형 number
+        let doubleNum=3.141592;//실수형 number
+        var boolean=true;//boolean
+        document.write(intNum, typeof(intNum),'<br>');
+        document.write(doubleNum, typeof(doubleNum),'<br>');
+        document.write(boolean, typeof(boolean),'<br>');
+
+        var obj=null; //null : 아무것도 아닌 값 = 참조형
+        document.write(obj, typeof(obj), '<br>');
+
+        var obj2; //undefined type 아직 정해지지 않은 값
+        document.write(obj2, typeof(obj2), '<br>');
+
+        //참조형 : object, function
+        //객체1
+        //객체 (속성attribute+행동양식action) => 변수(properth => 함수(method)
+        var car=new Object();
+        car.color="black"; //attribute 객체명.attribute
+        car.capacity=2000;
+        car.run= function(){//행동양식=>함수
+            document.write("<h2>"+this.color+"색상의 자동차가 달려요</h2>")
+        }
+
+        document.write(car.color+" "+car.capacity+" ", typeof car);
+
+        car.run();//함수 호출
+
+
+        //객체2 :{속성명1:값1, 속성명2:값}
+        var car2={
+            color:'red',
+            capacity:3000,
+            run:function(){
+                document.write("<h2>"+this.color+"색상의 자동차가 달려요</h2>");
+            }
+        };
+
+        document.write(car2.color+" "+car2.capacity+" ", typeof car2, "<br>");
+        car2.run();//함수 호출
+    </script>
+</body>
+</html>

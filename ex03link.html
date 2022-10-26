@@ -1,0 +1,34 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ex03link.html 입니다</title>
+    </head>
+    <body>
+        <h1>텍스트에 하이퍼링크를 걸어봅시다</h1>
+        <!-- a태그 안에 해당 텍스트가 와야 연결된다 -->
+        <a href="http://www.naver.com"></a> |네이버
+        <!-- blank는 새탭으로 열어줌-->
+        <a href="http://www.google.com" target="_blank">구글</a>
+
+        <a href="http://www.daum.net">다음</a>
+        <hr color="green">
+        <a href="ex01.html" target="_blank">내가만든 문서1-ex01.html</a> <br>
+        <a href="./test.html" target="_blank">내가만든문서 2-test.html</a> <br>
+        <a href="../index.html">index.html 문서</a>
+        <a href="../sample/sample.html">SAMPLE로 이동 문서</a>
+        <!-- 
+            nginx
+               +---html
+                   +---ex ---ex03link.html
+                         +---test.html
+                   +---index.html
+
+                   ' . ' 은 현재 디렉토리 의미
+                   ' .. ' 은 상위 디렉토리 의미 cd..같은것
+                   ' ../../../ ' 은 3개 상위 디렉토리 의미 
+
+             -->
+
+    </body>
+</html>

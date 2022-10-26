@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color:#fff
+        }
+        #btns{
+            width: 50%;
+            /* border:1px solid red; */
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+
+        }
+        #btns span{
+            display: inline-block;  /*이거뭐지??*/
+            width: 120px;
+            height: 30px;
+            padding: 5px;
+            border:1px solid white;
+        }
+        #movies{
+            width: 760px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #movies img{
+            width: 150px;
+            height: 220px;
+            border:1px solid white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="btns">
+            <span id="btn1" onclick="showMovie()">현재 상영작</span>
+            <span id="btnPlay">Play</span>
+            <span id="btnStop">Stop</span>
+        </div>
+        <div id="movies">
+            
+        </div>
+    </div>
+    <script>
+
+        // ----------------------#btn1에 대한 설정 ---------------------------
+        let movies=['m1.jpg','m2.jpg','m3.jpg','m4.jpg','m5.jpg']
+        let obj=document.getElementById('movies');
+        let btnPlay=document.querySelector("#btnPlay"); //참조값을 먼저 얻음
+        let btnStop=document.querySelector("#btnStop"); //참조값을 먼저 얻음
+        
+        let wid=null; //
+        let x=20; //x좌표 초기값
+        let i=1; //x좌표의 증가치
+    //showMovie()함수 만들어서 배열에 저장된 요소만큼 반목문 돌면서<img src='이미지파일명'>
+    //브라우저에 문자열 출력하기
+    function showMovie(){
+        let str='';
+        for(let i=0;i<movies.length;i++){
+            let movie=movies[i];
+            str+=`<img src="../images/${movie}">`;            
+        }
+        //document.write(str); //
+        obj.innerHTML=str;
+    }
+    window.onload=showMovie;
+
+    btnPlay.onclick=function(){
+        obj.style.position='absolute';
+        if(wid==null){
+            wid=setInterval(function(){
+                if(x>=document.body.clientWidth-760){
+                    i=-1;
+                }
+                if(x<=0){
+                    i=1;
+                }
+                obj.style.left=`${x}px`;
+                x+=i;
+            }, 1); //0.001초마다 x가 이동 
+                
+        }
+    }
+    
+    btnStop.addEventListener('click', function(){
+        if(wid!=null){
+            clearInterval(wid);
+            wid=null;
+        }
+    })
+       // ----------------------#btn1에 대한 설정 ---------------------------
+
+    </script>
+</body>
+</html>

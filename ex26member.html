@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>회원가입</title>
+        <style>
+            /* 메인타이틀 서식 */
+            h1{text-align: center;}
+            /* 표전체 서식 */
+            table{width: 800px; margin: auto;}
+            /* ID/고객정보 구분선 서식 */          
+            .subject{color: darkblue; font-weight: bold;
+                background-color:lightsteelblue; text-align: left; padding: 15px;}
+
+
+            /* left 1열(항목 부분) 서식 */
+            .leftheader{color: black; font-weight: lighter;
+                background-color:lightgrey; text-align: right; padding: 10px;}/*1열 표서식*/
+
+            /* right 2열(기입내용 부분) 서식 */
+            .rightcontent{padding: 10px; background-color:silver;} /*2열 표서식*/
+            .reference{color: blue; font-size: smaller;} /*주의사항등 주석*/            
+            input[type="text"]{width: 200px; height:20px;} /*각종텍스트박스*/
+            input[type="password"]{width: 200px; height:20px;} /*비밀번호박스*/
+            input[type="number"]{width: 100px; height:20px;} /*생년박스*/
+            input[type="tel"]{width: 150px; height:20px;} /*전화박스*/
+            input[type="email"]{width: 250px; height:20px;} /*이메일박스*/
+
+            /* 결과버튼 서식*/
+            #buttons{display: block; text-align:center; padding: 10px;}
+        </style>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form name="signup" id="signup" action="join.jsp" method="post" enctype="application/x-www-form-urlencoded">
+            <table>
+                <tr>
+                    <th class="subject" colspan="2">■ 아이디(ID)정보</th>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 아이디</td>
+                    <td class="rightcontent">
+                        <input type="text" name="userid" required>&nbsp;<button type="button">중복검사</button>
+                        <div class="reference">(4~12자 영자/숫자 가능, 한글,특수문자 ID는 사용 할 수 없습니다.)</div>
+                     <!-- 중복검사 필수 reqiored 필요, 조건에 따라 사용가능or불가능-재검사 필요 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 비밀번호</td>
+                    <td class="rightcontent">
+                        <input type="password" name="passwd" required>&nbsp;<span class="reference">(4~8자 이내로 만들어 주세요.)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 비밀번호 확인</td>
+                    <td class="rightcontent">
+                        <input type="password" name="passwdcheck" required>&nbsp;<span class="reference">(위 번호와 같이 입력해 주세요.)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 본인확인 질문</td>
+                    <td class="rightcontent">
+                        <select name="SecurityQuestion" required>
+                            <option value="">::질문을 선택하세요::</option>
+                            <option value="SQ1">가장 좋아하는 동물은?</option>
+                            <option value="SQ2">즐겨하는 취미는?</option>
+                            <option value="SQ3">가장 좋아하는 음식은?</option>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 본인확인 답</td>
+                    <td class="rightcontent">
+                        <input type="text" name="secureanswer" required>&nbsp;<span class="reference">(비밀번호 분실, 변경시 본인확인을 위한 정보)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="subject" colspan="2">■ 개인정보</th>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 이름(한글)</td>
+                    <td class="rightcontent">
+                        <input type="text" name="username" required>&nbsp;<span class="reference">(예:박정현)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">성별</td>
+                    <td class="rightcontent">
+                        <input type="radio" name="gender" value="M" checked="checked">남자
+                        <input type="radio" name="gender" value="F">여자
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">생년월일</td>
+                    <td class="rightcontent">
+                        <input type="number" name="byear" min="1900" max="2022">년
+                        <select name="bmonth">
+                            <option value="">선택</option>
+                            <option value="may">5월</option>
+                            <option value="jun">6월</option>
+                            <option value="jul">7월</option>
+                        </select>월
+                        <select name="bday">
+                            <option value="">선택</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>일
+                        <input type="radio" name="bcal" value="S" checked="checked">양력
+                        <input type="radio" name="bcal" value="M">음력
+                        <!-- 기본 양력으로 설정함 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 주소</td>
+                    <td class="rightcontent">
+                        <input type="text" name="userpcode" disabled>&nbsp;<button type="button">우편번호 찾기</button><br>
+                        <input type="text" name="useradrs" required>
+                        <!-- 흔한 홈페이지처럼 우편번호찾기를 통해 팝업-도로명주소검색-선택-선택 내용 일부 자동기입 후
+                             텍스트 인풋에 나머지 세부주소 쓰기 조건으로 변경원함 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 전화번호</td>
+                    <td class="rightcontent">
+                        <label for="phone">핸드폰</label>
+                        <input type="tel" name="cellphone" id="cellphone" placeholder="010-**..." required>
+                        <input type="radio" name="tcom" value="S" checked="checked">SKT
+                        <input type="radio" name="tcom" value="K">KTF
+                        <input type="radio" name="tcom" value="L">LGT
+                         <!-- 기본 SKT로 설정함 -->
+                        <br>
+                        <label for="phone">집/회사</label>
+                        <input type="tel" name="phone" id="phone" placeholder="02-**...">&nbsp;<span class="reference">(최소 한개는 입력하세요.)</span>
+                        <!-- 2개 중 1개를 required로 설정하는 방법 필요 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">* 직업</td>
+                    <td class="rightcontent">
+                        <select name="job" required>
+                            <option value="">::직업을 선택하세요::</option>
+                            <option value="Developer">개발자</option>
+                            <option value="Designer">디자이너</option>
+                            <option value="Manager">매니저</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">이메일</td>
+                    <td class="rightcontent">
+                        <label for="myemail"></label>
+                        <input type="email" name="email" id="myemail" multiple required placeholder="abc@abc.com">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">메일수신</td>
+                    <td class="rightcontent">
+                        <input type="radio" name="mktagreement" value="A" checked="checked">받습니다.
+                        <input type="radio" name="mktagreement" value="D">받지 않습니다.
+                        &nbsp;<span class="reference">(다양하고 유익한 정보, 메일로 받아보세요)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">SMS수신</td>
+                    <td class="rightcontent">
+                        <input type="radio" name="smsagreement" value="A">받습니다.
+                        <input type="radio" name="smsagreement" value="D">받지 않습니다.
+                        <!-- 선택하지 않는 경우 받지 않습니다로 인식하는 것 필요 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftheader">가입인사</td>
+                    <td class="rightcontent">
+                        <textarea name="intro" cols="70" rows="5"
+                        placeholder="자기소개를 100자이내로 하세요."></textarea>
+                    </td>
+                </tr>
+            </table>
+            <div id="buttons">
+               <input class="buttons" type="submit" value="확인">
+               <input class="buttons" type="reset" value="다시입력" onclick="alert('새로 작성합니다.')">
+               <!-- 입력값들을 초기화함-->
+            </div>
+        </form>
+    </body>
+</html>
+
+<!-- swanbaek@naver.com -->

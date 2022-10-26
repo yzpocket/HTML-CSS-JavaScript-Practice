@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        변수선언 및 초기화
+        while(조건식){
+            실행문;
+            증감식
+        }    
+        조건식이 true이면 실행문을 실행
+        false면 while loop 벗어남
+        */
+
+        let a=1;
+        while(a<5){
+            document.write(a,"<br>");//1 br 3
+            a+=2;
+        }
+        document.write("<hr>");
+
+        //10, 9, 8, ...2,1 형태로 while루프를 이용해 출력하고,
+        //10+9+8+ ...+1=55 
+        //10부터 1까지의 합을 구해 출력하기
+
+        // // 3회차_이해나님이 모두에게 (오후 1:43)
+        // let b=10;
+        // const sum=b*(b+1)/2;
+        // while(b>0){
+        //     document.write(b,"<br>"");
+        //     b--;
+        // }
+        // document.write(sum);
+        
+
+        // // 3회차_강혜원님이 모두에게 (오후 1:44)
+        // let b = 10;
+        // let sum = 0;
+        // while(b>0){
+            
+        //     sum+=b;
+        //     document.write(b,"<br>");
+        //     b--;
+        // }document.write(sum);
+
+        // 3회차_한다연님이 모두에게 (오후 1:43)
+        let b = 10;
+        while(1 <= b){
+            document.write(b, "<br>");
+            b -= 1;
+        }
+        document.write("<hr>");
+
+        let c = 10;
+        let total = 0;
+        while(1 <= c){
+            total += c;
+            c -= 1;
+        }
+        document.write(total);
+        document.write("<hr>"); 
+
+    </script>   
+</body>
+</html>

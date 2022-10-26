@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    <script>
+    // 5.논리연산자 & , | , ^
+    
+    /*
+        ! : 논리부정 연산자 true를 false로, false를 true로 변경
+
+    */
+    let a=true;
+    let b=!true;
+
+    let print=function(str){
+        document.write("<h2>"+str+"</h2>");
+    }
+    print("a="+a);
+    print("b="+b);
+    print("a&b="+(a&b));//f(0)
+    print("a|b="+(a|b));//t(1)
+    print("a^b="+(a^b));//t(1)
+
+    print("<hr color='blue'>");
+
+    print("a&&b="+(a&&b));//f(0)
+    print("a||b="+(a||b));//t(1)
+    print("a^b="+(a^b));//t(1)
+
+    /*
+    &, && : 결과는 동일하게 나오지만 &&의 경우는 앞의 피연산자가 false일 경우
+            뒤에 오는 피연산자는 수행하지 않는다
+    |, || : 결과는 동일함, ||의 경우 앞의 피연산자가 true일 경우 
+            뒤에 오는 피연산자는 수행하지 않는다
+
+         */
+
+
+    print("<hr color='blue'>");
+    //6. 비트연산자 (비트로 바꾸어 연산을 수행함) : |, &, ^
+    print(3|5);//둘중 하나라도 1이면 1, 둘다 아니어야 0 // 0111 ==>7
+    /*
+        0011
+        0101
+    |   0111
+    */
+    print(3&5);//두 비트가 1일때만 1, 나머지는 0 // = 2진법 0001 = 10진법 1
+    /*
+        0011
+        0101
+    &   0001
+        =1
+    */
+    print(3^5);//두 비트가 다르면 1, 다르면 0 // = 2진법 0110 = 10진법 6
+    /*
+        0011
+        0101
+    ^   0110
+        =6
+    */
+
+
+    print("<hr color='blue'>");
+    /*7. shift 연산자(비트를 주어진 숫자만큼 이동시킨다) 
+        [1] <<:왼쪽으로 비트이동 새로 생기는 뒷 빈칸은 무조건 0으로 채운다
+        [2] >>:오른쪽으로 비트이동 새로 생기는 첫비트에 따라  = 부호비트 양수0 음수1
+        [3] >>>:오른쪽으로 비트이동
+            5     : 00000101
+            5<<2  : 00101000   =>20     
+            5>>2  : 00000001
+        */
+       print(5<<2);
+       print(5>>2);
+       print(5>>>2);
+    print("<hr color='blue'>");
+       print(-5>>2);
+       print(-5>>>2);
+    
+    </script>
+</body>
+</html>

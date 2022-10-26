@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex37important</title>
+    <style>
+        /* p tag 선택 text red */
+        /* #p1이 id로 가장 우선순위가 높지만
+        !important로 다른 엘리먼트의 우선순위를 최상위로 올릴 수 있다 */
+        p{color:red!important;}
+        /* #p1 id 선택 text red */
+        #p1{color:blue;}
+        /* div.food 선택 text choc */
+        .food{color:chocolate;}
+        div.food{color:coral;}
+        div{color: aqua;}
+        
+    </style>
+</head>
+<body>
+    <p id="p1">
+        Will be Red
+    </p>
+    <div class="food">
+        Will be Chocolate
+    </div>
+</body>
+</html>
+<!-- ex37important -->

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex54quiz</title>
+</head>
+<body>
+    <h1>실습</h1>
+    <p>
+        prompt로 국어,영어,수학 성적을 입력받아서<br>
+        성적표를 테이블 형태로 출력하세요.<br>
+        국어:<br>
+        영어:<br>
+        수학:<br>
+        총합계 점수 : 300점<br>
+        평균 점수 : 100점<br>
+        학 점 평90 A/80B/70C/60D/미만F <br>
+    </p>
+    <script>
+        let korean=window.prompt("국어 점수를 입력하세요", "94");
+        let english=window.prompt("영어 점수를 입력하세요", "90");
+        let math=window.prompt("수학 점수를 입력하세요", "40");
+        let n1=parseFloat(korean); // string->number로 변환, prompt는 string으로 받게된다 더짧게 해결할수 없는지
+        let n2=parseFloat(english);
+        let n3=parseFloat(math);
+        let sum=(n1+n2+n3) 
+        let avg=(sum/3).toFixed(2); // 소수점 발생문제 round등 사용가능한듯하다
+            // console.log(avg); // 확인용
+
+        let result="";
+
+        if(avg>=90){
+        result="A"; //brown
+        cr='brown';
+        }
+        // else if는 다수 가능하다,
+        else if(avg>=80 && avg<=90){
+        result="B"; //green
+        cr='green';
+        }
+
+        else if(avg>=70 && avg<=80){
+        result="C"; //blue
+        cr='blue';
+        }
+
+        else if(avg>=60 && avg<=70){
+        result="D"; //yellow
+        cr='yellow';
+        }
+        // else는 필수는 아니어도 된다.
+        else{result="F"; //red
+            cr='red'
+        }
+
+        let str="<table border='1'>";
+            str+="<tr><th>국어</th><td>"+korean+"점</td></tr>";
+            str+="<tr><th>영어</th><td>"+english+"점</td></tr>";
+            str+="<tr><th>수학</th><td>"+math+"점</td></tr>";
+            str+="<tr><th>총합계</th><td>"+sum+"점</td></tr>";
+            str+="<tr><th>평균점수</th><td>"+avg+"점</td></tr>";
+            str+="<tr><th>학 점</th><td style='color:"+cr+"'>"+result+"</td></tr>";
+            str+="</table>";
+
+        document.write(str);
+    </script>
+</body>
+</html>

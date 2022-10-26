@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex60for</title>
+</head>
+<body>
+    <h1>반복문 - for roop</h1>
+    <!-- 
+        for(let 변수선언=초기값; 조건식; 증감식){
+            실행문;
+        }
+     -->
+     <script>
+        for(let i=1;i<=3;i++){
+        document.write(`<h3>hello JavaScript ${i}</h3>`);
+        }
+
+        // Hi 5, Hi 4, ... Hi 1 for loop로 출력
+        for(let j=5;j>0;j--){
+        document.write(`<h3>Hi ${j} </h3>`);
+        }
+
+        //[1] for loop를 이용해서 구구단의 7단을 출력해보세요
+        
+        for(let g=1;g<10;g++){
+            result=7*g;
+            document.write(`<h3>7*${g}=${result}</h3>`)
+        }
+
+        //[2] prompt로 구구단의 단을 입력받아서 구구단을 table형태로 출력하세요
+        //    단, 짝수단이면 table의 배경색을 gold로 주고, 홀수단이면 skyblue로 주세요
+        
+        let nth=window.Number(prompt("구구단 몇단?", "2"));
+        let colornumber=(nth%2==0)?"gold":"skyblue";
+        let str=`<table border="1" style"width:200px;background:${colornumber}>;
+                <tr><th>${nth} 단</th></tr>;`;
+        for(let g=1;g<10;g++){
+            str+=`<tr><td align='center'>`;
+            str+=`${nth}X${g}=${nth*g}<br>`;
+            str+=`</td></tr>`;
+        }
+        str+=`</table>`
+        document.write(str)
+
+        // let num=Number(prompt(‘구구단 단수를 입력하세요’));
+        // let p=num%2;
+        // let color=(p==0)?”gold”:”skyblue”;
+        // let str=`<table border=“1” style=background:${color}>`;
+        // switch(p){
+        //     case (0):{
+        //     for(let k=1; k<=9; k++){
+        //         str+=`<tr><td>`
+        //         str+=`${num} *${k}=${num*k}`;
+        //         str+=`</td></tr>`
+        //         }
+        //         str+=`</table>`
+        //     document.write(str);
+        //     }
+        //     case (1):{
+        //     for(let w=1; w<=9; w++){
+        //         str+=`<tr><td>`
+        //         str+=`${num} *${w}=${num*w}`;
+        //         str+=`</td></tr>`
+        //         }
+        
+     </script>
+</body>
+</html>
+<!-- ex60for.html -->

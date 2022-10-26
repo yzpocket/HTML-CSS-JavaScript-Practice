@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width: 30%;
+            display: inline-block;    
+        }
+
+        /* 입력값이 유효혈경우 :valid, 유효하지 않을경우 :invalid */
+        /* 유효한 값이 입력되면 input 중 text인 element들의 배경색을 bisque로 주세요 */
+        /* 유효하지 않은값이 입력되면 input중 text배경을 tomato(rgb값 255,99,71)로 */
+        input:valid{background-color: bisque;}
+        input:invalid{background-color:rgb(255, 99, 71);}
+
+        /* input element 중 text 타입이 아닌 element를 선택해서 테두리 2px dotted green */
+        input:not([type=text]){border: 2px dotted green;}
+                    
+    </style>
+</head>
+<body>
+    <h1>가상클래스 선택자</h1>
+    <form action="join.jsp" method="post">
+        <!-- required 어떠한 값이라도 입력해야 함 -->
+        <label for="">반드시 값을 입력해야 해요</label>
+        <input type="text" required>
+        <br>
+        
+        <!-- required 문자 설정[A-Za-z0-9], 자릿수{2,4} 설정 -->
+        <label for="">특수문자 포함하지 않는 2~4자리 문자 또는 숫자</label>
+        <input type="text" required pattern="[A-Za-z0-9]{2,4}">
+        <br>
+        
+        <!-- 숫자만 하는경우 0-9, 2~4자리 -->
+        <label for="">숫자만 2~4자리로 입력하세요</label>
+        <input type="text" required pattern="[0-9]{2,4}">
+        <br>
+
+        <!-- 숫자만 하는경우 0-9, 2~4자리 -->
+        <label for="">숫자+특수문자 2~4자리로 입력하세요</label>
+        <input type="password" required pattern="[0-9!@#$%^&*()~]{2,4}">
+        <br>
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+</html>

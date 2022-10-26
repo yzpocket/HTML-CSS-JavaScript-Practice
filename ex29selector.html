@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 가상클래스: 문서의 여러 element 중 원하는 element를 선택
+		    가상element  : 문서 안의 특정 부분에 스타일을 지정하기 위해 가상으로 element를 만들어 추가한다.
+		   	가상element는 가상 클래스와 구별하도록 가상element 이름 앞에 콜론(::) 2개를 붙여 표시한다.
+            
+            - element::first-letter : element 중 첫 글자를 선택
+            - element::first-line : 첫번째 줄을 선택
+            - element::after : element 이후에 스타일 적용
+            - element::before : element 이전에 스타일 적용
+            - element::selection : 선택한 element
+            */
+            h1::before{
+                content:'CSS '; color: palevioletred;
+            }
+            /* p엘리먼트 중 첫글자 선택 크기 3배 */
+            /* p엘리먼트 첫줄 색상 변경 볼드 */
+            /* h1엘리먼트 뒤 ' HTML!!' 텍스트 붙이고 폰트스타일변경 */
+
+            p::first-letter{font-size: 3em;}
+            p::first-line{color: blue; font-weight: bold;}
+            h1::after{content: ' HTML!!'; font-family:'Brush Script MT'; font-weight: bold ;}
+
+            /* 드래그시 */
+            ::selection{background-color: olive;}
+
+            /* 참조 홈페이지 */
+            /* http://www.w3schools.com */
+    </style>
+</head>
+<body>
+    <h1>가상element 선택자</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Explicabo illum sunt distinctio sed, tempore, repellat 
+            rerum et ea laborum voluptatum! Quisquam error fugiat 
+            debitis maiores officiis, tenetur ullam amet in!
+        </p>
+  
+</body>
+</html>
+<!-- ex29selector -->

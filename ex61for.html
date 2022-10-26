@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>중첩 for loop</h1>
+    <script>
+        /*
+        ㅁㅁㅁㅁㅁ
+        ㅁㅁㅁㅁㅁ
+        ㅁㅁㅁㅁㅁ
+        3행 5열
+        */
+        for(let k=0;k<3;k++){ //행의 조건
+            for(let i=0;i<5;i++){ //열의 조건
+                document.write(`ㅁ(${k}, ${i})`);
+            }
+         document.write("<br>")
+        }
+
+        /*
+        ㅁ
+        ㅁㅁ
+        ㅁㅁㅁ
+        ㅁㅁㅁㅁ
+        ㅁㅁㅁㅁㅁ
+        5행 n+1열
+        */
+        for(let h=0;h<5;h++){
+            for(let k=0;k<=h;k++){
+                document.write("★");
+            }
+            document.write("<br>");
+        }
+
+        for(let h=0;h<5;h++){
+            for(let k=0;k<=h;k++){
+                document.write("★");
+            }
+            document.write("<br>");
+        }
+        document.write("<table border>");
+        document.write("<tr>");
+        for(let i=2; i<=9; i++) { 
+            document.write("<th>"+i+"단</th>");
+        }
+        document.write("</tr>");
+        for(let i=1; i<=9; i++){ //행의 조건
+            document.write("<tr>"); 
+            for(let j=2; j<=9; j++) { //열의 조건
+                document.write("<td>"+j+"x"+i+"="+i*j+"</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        document.write("<hr>");
+    </script>
+</body>
+</html>

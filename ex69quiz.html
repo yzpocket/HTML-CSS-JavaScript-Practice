@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex69quiz</title>
+    <link rel="stylesheet" type="text/css" href="./css/layout2.css"> <!-- absolute direction would be better -->
+
+</head>
+<body>
+    <div id="wrap">
+        <nav id="btns">
+            <span id="btn1" onclick="showMovie()">현재 상영작</span>
+            <span id="btnPlay">Play</span>
+            <span id="btnStop">Stop</span>
+        </nav>
+        <div id="movies">
+
+        </div>
+    </div>
+
+    <script>
+        let movies=['m1.jpg','m2.jpg','m3.jpg','m4.jpg','m5.jpg']
+        let obj=document.getElementById('movies')
+        //showMovie()함수 만들어서 배열에 저장된 요소 만큼 반복문 돌면서 <img src='이미지 파일명'
+        //브라우저에 문자열 출력하기    
+        function showMovie(){
+            let str='';
+            for(let i=0;i<movies.length;i++){
+                let movie=movies[i];
+                str+=`<img src="../images/${movie}">`;
+            }
+            obj.innerHTML=str;
+        }
+
+    </script>
+</body>
+</html>

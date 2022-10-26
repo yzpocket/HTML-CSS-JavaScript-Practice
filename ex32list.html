@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li{
+            border:1px solid orange;
+            list-style-position: inside; /*기본값은 outside*/
+        }
+
+        /* class가 menu인 element아래 li들에 적용하시오 */
+        /*  폭:120px  높이:25px
+	   - 배경색: lightblue;
+	   - 마진: 3px
+	   - 패딩: 10px
+	   - 글자색: 알아서
+	   - 서체: Helvetica, sans-serif
+	   - 글자크기 : 13px;
+	   - 글자정렬: 중앙에 오도록
+       - 목록표시없에기
+ */
+        .menu>li{
+            width: 120px;
+            height: 25px;
+            background-color: lightblue;
+            margin: 3px;
+            padding: 10px;
+            color: brown;
+            font-family: sans-serif,Arial, Helvetica ;
+            font-size: 13px;
+            text-align: center;
+            list-style-type: none;
+            border: none;
+            /* 왼쪽을 기준으로 inline요소를 가지고옴 */
+            float:left;
+        }
+        a:link{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>list style</h1>
+    <!-- style: disc, square, circle, none -->
+    <ul style="list-style-type:none; list-style-image: url(../images/icon1.png);">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+    </ul>
+    <hr>
+    <ol style="list-style-type: upper-roman; border:1px solid red;">
+        <li>Oracle</li>
+        <li>MySQL</li>
+        <li>SQL Server</li>
+    </ol>
+ 
+    <hr>
+
+    <ul class="menu">
+        <li><a href="ex01.html">HTML</a></li>
+        <li><a href="ex01.html">CSS</a></li>
+        <li><a href="ex01.html">JavaScript</a></li>
+        <li><a href="ex01.html">Java</a></li>
+    </ul>
+    <p>float으로 위li부터 아래로 계속 당겨집니다</p>
+    <hr color="red" style="clear:left">
+                        <!-- float left속성을 해제할때  -->
+                        <!-- float right속성 해제할때 clear:right -->
+                        <!-- float both해제할때 clear:both -->
+    <hr>
+</body>
+</html>
+<!-- ex32list.html -->

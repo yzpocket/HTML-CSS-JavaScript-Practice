@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex47valscope</title>
+</head>
+<body>
+    <h1>전역변수, 지역변수 매개변수(지역변수 일종)</h1>
+    <script>
+        var global="전역변수"; //script전역에서 쓸수있어서 전역변수 global
+
+        function hello(){
+            var local="지역변수"; /* hello안에서만 쓸수있어서 지역변수 local
+                                     속해있는 블럭까지만 사용할수 있다.*/
+            aaa=100;//var를 생략하고 변수를 선언하고 초기화 => 속해있어도 전역변수가됨.(!!!!)
+                    // 하지만 hello 가 아래에서 선언되고 실행되어야 이 변수가 전역변수로 사용됨.
+            alert('global: '+global);
+            alert('local: '+local);
+        }
+
+        function hi(){
+            alert('hi()------');
+            alert('global>>'+global);
+            // alert('local>>>'+local); [x]사용못함
+        }
+        function bye(name){//name:매개변수(parameter)=>지역변수 중 하나
+            //name : 매개변수는 var를 생략하고 변수명만 기술함
+            alert('Bye Bye~'+name);
+            alert('aaa: '+aaa);
+        }
+
+        hello(); //함수호출해야 실행됨
+        hi();
+        bye('Fred');
+
+    </script>
+</body>
+</html>
+<!-- ex47varscope.html -->

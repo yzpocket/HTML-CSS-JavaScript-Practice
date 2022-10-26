@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex38layer</title>
+    <style>
+        div:not(#wrap){
+            width:100px;
+            height: 100px;
+        }
+
+        /* default 위치 static를 기준으로 상대적 위치로 잡게한다 */
+        #wrap{
+            position: relative;
+            border: 1px solid red;
+            width: 100%;
+            height: 500px;
+        }
+        .z-1{
+            /* 바로 위 parent element를 기준으로한다 static인경우 body를 따라감 */
+            position: absolute;
+            background-color: aquamarine;
+            /* x좌표 */
+            left: 50px;
+            /* y좌표 */
+            top: 50px;
+            /* z값으로 위아래 구분 */
+            z-index: 9;
+        }
+        .z-2{
+            position: absolute;
+            background-color: lightblue;
+            /* x좌표 */
+            left: 80px;
+            /* y좌표 */
+            top: 80px;
+            z-index: 8;
+        }
+        .z-3{
+            position: absolute;
+            background-color: lightcoral;
+            /* x좌표 */
+            left: 120px;
+            /* y좌표 */
+            top: 120px;
+            z-index: 7;
+        }
+        .z-4{
+            position: absolute;
+            background-color: lightgreen;
+            /* x좌표 */
+            left: 150px;
+            /* y좌표 */
+            top: 150px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <h1>layer를 구성해보자</h1>
+    <div id="wrap">
+        <div id="" class="z-1">
+            레이어: z-1
+        </div>
+        <div id="" class="z-2">
+            레이어: z-2
+        </div>
+        <div id="" class="z-3">
+            레이어: z-3
+        </div>
+        <div id="" class="z-4">
+            레이어: z-4
+        </div>
+    </div>
+</body>
+</html>

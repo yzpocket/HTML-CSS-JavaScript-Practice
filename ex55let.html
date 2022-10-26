@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>변수 선언에 var, let, const 붙이는 이유</h1>
+    <!-- const = 상수를 만들고자 할때 -->
+    <script>
+        var a=10; // 함수 밖에서 선언되서 ''전역변수임'' function level scope if(함수 등)에서 다시 선언되면 이것이 유지되지 않음.
+        let b=20; // 함수 밖에서 선언되서 ''전역변수임'' block level scope 그런데 if로 들어간건?
+        document.write("a: ", a, "<br>"); //10
+        document.write("b: ", b, "<br>"); 
+        if(a>0){
+            var a=300; // 전역변수 
+            let b=400; // 지역변수(var랑 차이가있다.)(괄호안에만 속하도록 스코프를 개선한 버전임.)
+            document.write("if block 안 a: ", a, "<br>"); //300
+            document.write("if block 안 b: ", b, "<br>"); //400
+        }
+        document.write("a: ", a, "<br>"); //300
+        document.write("b: ", b, "<br>"); //20
+        
+
+
+        var x='hello';
+        let y='hi';
+        document.write("x: ",x,"<br>");//hello가 출력됨
+        var x='9.12';
+        // let y='2.12'; //let 변수는 동일명으로 중복선언 할 수 없음.
+        document.write("x: ",x,"<br>");//9.14가 출력됨(같은x선언됬지만 변함)
+        // document.write("y: ",y,"<br>");//에러가 출력됨..
+
+
+        document.write("i: ", i, "<br>"); // var 변수는 hoisting이 된다.
+        // document.write("j: ", j, "<br>");//에러가 출력됨.. 
+
+        var i='tiger';// var 변수는 hoisting이 된다.
+        let j='lion';// var 변수는 hoisting이 안 된다.[X]
+
+        // document.write("i: ", i, "<br>"); 
+        document.write("j: ", j, "<br>"); 
+
+
+        const NONE=0;
+        let add=1;
+        document.write(NONE, "<br>");
+        document.write(add, "<br>");
+        add=100;//값을 변경
+        // NONE=200; [X]; 상수(const)는 값을 재선언 할 수 없다.
+        document.write(add, "<br>");
+        document.write(NONE, "<br>");
+        
+        let edit;
+        const update='ok';
+    </script>
+</body>
+</html>
+<!-- ex55let.html -->

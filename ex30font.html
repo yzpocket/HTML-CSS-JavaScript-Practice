@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body{
+        /* font */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* xx-small~ xx-large
+            px(default), pt, em, rem(상속받지않게) */
+        font-size: 1.2em;
+        /* tilting */
+        font-style: italic;
+        /* weight : bold, lighter, bolder*/
+        font-weight:lighter;
+        /* (font)color : name, #??**??, rgb(???,???,???)*/
+        color: blue;
+        /* align : left, center, right */
+        text-align: left;
+    }
+        /* overline[TOP LINE] */
+        #overline{text-decoration: overline;}
+
+        /* underline[BOTTOM LINE] */
+        #underline{text-decoration: underline;}
+        /* underline remove */
+        #underlineremove{text-decoration:none;}
+
+        /* linethrough[CANCLE LINE] */
+        #line-through{text-decoration: line-through;}
+
+        /* shadow */
+        #shadow{text-shadow: 4px 2px 4px orange;}
+
+        /* 테이블 아래
+            <div id="a1">abc첫글자를 대문자로</div>
+            <div id="a2">abc모두 대문자로</div>
+            <div id="a3">abcDEF모두 소문자로</div> */
+        #a1{text-transform: capitalize;}
+        #a2{text-transform: uppercase;}
+        
+        #a3{text-transform: lowercase;}
+        /* 문단 들여쓰기 text-indent 4pt, -2pt */
+    </style>
+</head>
+<body>
+    <h1>font 또는 text style</h1>
+    <h2>Normal</h2>
+    <h2 id="overline">Overline</h2>
+    <h2 id="underline">Underline</h2>
+    <h2 id="line-through">Line-through</h2>
+    <a id="underlineremove" href="ex01.html">link underline remove</a>
+    <hr>
+    <h1 id="shadow">Hello CSS- Text Shadow</h1>
+
+    <!-- table 정렬 법 width:??%->margin: auto -->
+<table style="width:80%; margin: auto; height: 300px;" border="1">
+    <tr>
+        <td width="50%" style="vertical-align: top">수직정렬</td>
+        <td width="50%" style="text-align: center;">수평정렬</td>
+        <!-- 수평: text-align (left(default), center, right, justify(좌우)) -->
+        <!-- 수직: vertical-align (top, middle(default), bottom) -->
+    </tr>
+    <tr>
+        <td width="50%">
+            <!-- text-transform CAPTIALIZE, uppercase, lowercase -->
+            <div id="a1">abc첫글자를 대문자로(대문자표기법대로)</div>
+            <div id="a2">abc모두 대문자로</div>
+            <div id="a3">abcDEF모두 소문자로</div>
+        </td>
+        <td width="50%">
+            문자간격<br>
+            <!-- letter , word -spacing -->
+            <span style="letter-spacing:20px">문자간격</span><br>
+            <span style="word-spacing:30px">단어 간격</span>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

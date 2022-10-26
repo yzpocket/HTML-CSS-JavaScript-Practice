@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=window.prompt("정수1을 입력하세요");
+        let num2=prompt("정수2를 입력하세요");
+
+        document.write("num1="+num1,typeof(num1),"<br>");
+        document.write("num2="+num2,"<br>");
+
+        
+        // n1, n2덧셈식을 브라우저에 출력하세요
+        //5+3=8 이런식으로
+        // num들이 string으로 입력되있음, number로 변환이 필요하다.
+        // [1] parseInt() : 숫자 문자열을 정수로 변환하는 함수
+        // [2] parseFloat() : 숫자 문자열을 실수로 변환하믄 함수
+        // [3] Number() : 숫자로 만들어주는 함수
+        // let n1=parseInt(num1); // 이거나
+        let n1=Number(num1); //이거 써도됨
+        let n2=parseInt(num2);
+        console.log(n1, typeof(n1)); // 확인용
+
+        document.write("<h3>"+num1+"+"+num2+"="+(n1+n2))
+
+
+
+
+    </script>
+</body>
+</html>

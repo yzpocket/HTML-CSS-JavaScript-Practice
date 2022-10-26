@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>window객체의 setTimeout()/clearTimeout()활용</h2> <!-- 1회 실행 -->
+    <h2>window객체의 setInterval()/clearInterval()활용</h2> <!-- 계속 실행 다음 ex67에서함 -->
+    <button onclick="show()">Click Me</button>
+    <button onclick="go()">Go Go</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="goGoogle()">3초 뒤에 구글로 이동</button>
+    <button onclick="move()">Move</button>
+    <hr>
+    <div id="circle"></div>
+
+
+    <script>
+        let wid=null; // 전역변수 선언
+        const show=function(){
+            // let obj=document.getElementsById('circle');
+            let obj=document.querySelector("#circle");
+            obj.style.display='block';
+            obj.style.backgroundColor='orange'; //[x]
+            // JavaScript에서는 하이픈('-')이 빼기 연산자로 사용되므로
+            // -을 빼고 대신 하이픈 뒤에 오는 첫 글자를 대문자로 기술한다 background-Color -> backgroundColor (calmel표기법)
+            // alert(obj);
+        }    
+
+        //go 함수 구성하기, #circle 객체 참조 변수 선언 후 할당하기
+        const go=function(){
+            let obj=document.querySelector("#circle");
+            //window.setTimeout(함수,밀리초) : 밀리초 이후에 함수를 한번만 호출한다.
+            wid=window.setTimeout(move,3000); //3.000초 뒤에 show()함수를 호출함
+            // window.setTimeout()
+        }
+        const move=function(){
+            let obj=document.querySelector("#circle");
+            //#circle의 x좌표를 500px 위치로 이동시키는 코드 작성하세요.
+            //Go()함수 내에서 setTimeout()에 move전달해보기
+            obj.style.display='block';
+            obj.style.position='absolute';
+            obj.style.left='500px';
+        }
+        const stop=function(){
+            //setTimeout()<=반대개념=>clearTimeout()
+            window.clearTimeout(wid);
+        }
+
+
+        //[1] goGoogle()함수에서 location 이용해서 3초 뒤에 구글로 이동하기
+        const goGoogle = function(){
+            // 3회차_한다연님이 모두에게 (오후 3:33)
+        //     window.setTimeout(google, 3000);
+        //     const google = function() {
+        //     window.location.href = "http://www.google.com";
+        // }
+        
+            //실무에선 아래처럼 많이 쓴다.
+            // setTimeout(function(){ 
+            //     location.href="http://www.naver.com";
+            // },3000)
+            
+
+            //ES6 화살표 함수써서 아주 줄여서 이렇게 까지 쓴다.: ()=>{}
+                setTimeout(()=>{
+                    location.href='http://www.google.com';
+                },3000)
+        }
+
+
+
+    </script>
+</body>
+</html>
